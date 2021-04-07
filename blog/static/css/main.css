@@ -1,0 +1,35 @@
+body {
+    background-color:#ffffff;
+}
+
+nav {
+    background-color: #83cdff;
+    margin-bottom: 20px;
+}
+
+#navbarNav {
+    background-color: #83cdff;
+    padding-left: 6px;
+}
+
+#navContainer {
+    background-color:#83cdff;
+
+}
+
+/* #mainCointainer {
+    padding-left: 0;
+} */
+
+.nav-link {
+    color: #141414;
+}
+
+/* .container {
+    background-color:#a3fdee;
+    
+} */
+
+.container #mainContainer {
+    padding-left: 0;
+}
