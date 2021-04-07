@@ -14,25 +14,21 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        {% comment %} <div class="container-lg"> {% endcomment %}
             
-            {% block content %}
-            
-                {% for post in posts %}
+        {% block content %}
 
-                    <div class="container mainContainer">                        
-                        <h2>{{ post.title }}</h2>
-                        <p>{{ post.text|linebreaksbr }}
-                        <p><i>Published: {{ post.published_date }}</i></p>
-                        <hr>
-                    </div>
+            {% for post in posts %}
 
-                {% endfor %}
-            
-            {% endblock content %}
+                <div class="container postContainer">                        
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.text|linebreaksbr }}
+                    <p><i>Published: {{ post.published_date }}</i></p>
+                    <hr>
+                </div>
 
-        {% comment %} </div> {% endcomment %}
+            {% endfor %}
         
-        <script src="" async defer></script>
+        {% endblock content %}
+
     </body>
 </html>
