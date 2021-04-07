@@ -7,29 +7,30 @@ nav {
     margin-bottom: 20px;
 }
 
-#navbarNav {
-    background-color: #83cdff;
-    padding-left: 6px;
+.navBar {
+    background-color: #7eb2ff;
+    width: auto;
+    vertical-align: middle;
+    height: 3em;
 }
-
-#navContainer {
-    background-color:#83cdff;
-
-}
-
-/* #mainCointainer {
-    padding-left: 0;
-} */
 
 .nav-link {
     color: #141414;
 }
 
-/* .container {
-    background-color:#a3fdee;
-    
-} */
-
-.container #mainContainer {
+.container .mainContainer {
     padding-left: 0;
+    padding-top: 1em;
+}
+
+.row .row-cols-3 {
+    height: 3em;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.col {
+    height: 2em;
+    vertical-align: middle;
+    text-align: center;
 }
