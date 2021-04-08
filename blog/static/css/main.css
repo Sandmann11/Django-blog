@@ -6,33 +6,47 @@ nav {
     background-color: #83cdff;
 }
 
+.nav-item {
+
+}
+
 .nav-link {
     color: #141414;
 }
 
 .mainContainer {
-    background-color:floralwhite;
-    padding-top: 0.7em;
+    /* background-color:floralwhite; */
+    padding-top: 2em;
 }
+
+.navbar-brand {
+    color:black;
+    font-weight: 500;
+}
+
+.album {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#carouselExampleIndicators {
+    margin: auto;
+}
+
+
+/* .navbar-nav {
+    margin: auto;
+} */
 
 /* .postContainer {
     padding-left: 5px;
     padding-right: 5px;
 } */
 
-
-
-/* .navbarNav {
-    background-color: #7eb2ff;
-    width: auto;
-    vertical-align: middle;
-    height: 3em;
-} */
 /* .navContainer {
-    padding-left: 5px;
-    padding-right: 5px;
+    margin: auto;
 } */
+
 /* .navbar-expand-lg {
-    padding-left: 16.5vw;
-    padding-right: 16.5vw;
+    margin: auto;
 } */

@@ -17,10 +17,10 @@
 
         {% include 'blog/navbar.html' %}
 
-            <div class="container-lg mainContainer">
+            <div class="container-xl mainContainer">
 
                 {% block content %}
-                    <h4>This comes from index</h4>
+                {% include 'blog/welcome.html' %}
                 {% endblock content %}
             </div>
 
