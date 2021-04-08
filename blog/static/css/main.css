@@ -1,14 +1,15 @@
 body {
     background-color:#ffffff;
+    height: 1200px;
 }
 
 nav {
     background-color: #83cdff;
 }
 
-.nav-item {
+/* .nav-item {
 
-}
+} */
 
 .nav-link {
     color: #141414;
@@ -24,14 +25,14 @@ nav {
     font-weight: 500;
 }
 
-.album {
-    padding-top: 0;
-    padding-bottom: 0;
+/* .album {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 #carouselExampleIndicators {
     margin: auto;
-}
+} */
 
 
 /* .navbar-nav {
