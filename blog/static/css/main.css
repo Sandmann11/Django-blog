@@ -7,16 +7,12 @@ nav {
     background-color: #83cdff;
 }
 
-/* .nav-item {
-
-} */
-
 .nav-link {
     color: #141414;
 }
 
 .mainContainer {
-    /* background-color:floralwhite; */
+    background-color:floralwhite;
     padding-top: 2em;
 }
 
@@ -24,6 +20,10 @@ nav {
     color:black;
     font-weight: 500;
 }
+
+/* .homeContainer {
+    text-align: justify;
+} */
 
 /* .album {
     padding-top: 0 !important;
@@ -33,7 +33,6 @@ nav {
 #carouselExampleIndicators {
     margin: auto;
 } */
-
 
 /* .navbar-nav {
     margin: auto;
