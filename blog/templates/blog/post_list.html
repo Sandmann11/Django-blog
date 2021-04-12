@@ -6,35 +6,23 @@
 
     {% for post in posts %}
 
-        <div class="container postContainer"> 
-            <div class="card mb-3" style="max-width: 1000px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        {% if post.image %}
-                            <img src="{{ post.image.url }}" alt="...">
-                        {% endif %}
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5>{{ post.title }}</h5>
-                            <p><i>{{ post.lead }}</i></p>
-                            <p class="card-text">{{ post.text }}</p>
-                            <p class="card-text"><small class="text-muted"><i>Published: {{ post.published_date }}</i></small></p>
-                        </div>
-                    </div>
+        <div class="container postContainer w-75"> 
+            <div class="row g-0 mb-4">
+                <div class="col-md-3 mx-auto">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="...">
+                    {% endif %}
+                </div>
+                <div class="col-md-9">
+                    <h4>{{ post.title }}</h4>
+                    <p class="card-text lh-1"><small class="text-muted"><i>Published by {{ post.author }} on {{ post.published_date }}</i></small></p>
+                    <p><i>{{ post.lead }}</i></p>
+                    <p class="card-text">{{ post.text }}</p>
                 </div>
             </div>
+            <hr>
         </div>    
 
     {% endfor %}
 
 {% endblock content %}
-
-
-        <div class="container postContainer">                        
-            <h2>{{ post.title }}</h2>
-
-            <p>{{ post.text|linebreaksbr }}
-            <p><i>Published: {{ post.published_date }}</i></p>
-            <hr>
-        </div>
