@@ -1,0 +1,19 @@
+{% extends 'blog/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for coin in coins %}
+
+
+        <div class="container postContainer w-75"> 
+            <ul>
+                <li><h5>{{coin.symbol}} | {{coin.name}} | {{coin.real_price}} USD</h5></li>
+            </ul>
+        </div>  
+
+
+    {% endfor %}
+
+{% endblock content %}

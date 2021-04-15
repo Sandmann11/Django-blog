@@ -17,7 +17,7 @@
                     <h4>{{ post.title }}</h4>
                     <p class="card-text lh-1"><small class="text-muted"><i>Published by {{ post.author }} on {{ post.published_date }}</i></small></p>
                     <p><i>{{ post.lead }}</i></p>
-                    <p class="card-text">{{ post.text }}</p>
+                    {% comment %} <p class="card-text">{{ post.text }}</p> {% endcomment %}
                     <a href="{% url 'post_text' post.pk %}" class="btn btn-success px-4 me-sm-3">Read more...</a>
                 </div>
             </div>

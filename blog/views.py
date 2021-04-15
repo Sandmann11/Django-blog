@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, Crypto
 
 # Create your views here.
 def main(request):
@@ -16,8 +16,9 @@ def post_text(request, pk):
 def portfolio(request):
     return render(request, 'blog/portfolio.html', {})
 
-# def homepage(request):
-#     return render(request, 'blog/main.html', {})
-
 def admin(request):
     return render(request, 'blog/admin.html', {})
+
+def crypto(request):
+    coins = Crypto.objects.all()
+    return render(request, 'blog/crypto.html', {'coins':coins})
