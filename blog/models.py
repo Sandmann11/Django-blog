@@ -24,16 +24,8 @@ class Post(models.Model):
 class Crypto(models.Model):
     name = models.CharField(max_length=50)
     symbol = models.CharField(max_length=5)
-    # price = models.FloatField(max_length=15)
+    price = models.FloatField(max_length=15)
     date = models.DateTimeField(default=timezone.now)
-
-    real_price = get_crypto.btc_rate()
-    # models.JSONField(max_length=15, null=True)
-    # real_price = models.FloatField(null=True)
-
-    # def price(self):
-    #     self.real_price = get_crypto.btc_rate()
-    #     self.save()
 
     def date_added(self):
         self.date = timezone.now()

@@ -1,0 +1,19 @@
+{% extends 'blog/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% comment %} {% for ticker in response %} {% endcomment %}
+
+        <div class="container postContainer w-75"> 
+            <ul>
+                <li><h5> {{ btc_symbol }} | {{ btc_price }} USD</h5></li>
+                <li><h5> {{ eth_symbol }} | {{ eth_price }} USD</h5></li>
+                <li><h5> {{ xmr_symbol }} | {{ xmr_price }} USD</h5></li>
+            </ul>
+        </div>
+
+    {% comment %} {% endfor %} {% endcomment %}
+
+{% endblock content %}
