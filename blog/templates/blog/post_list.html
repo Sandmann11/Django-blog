@@ -1,12 +1,21 @@
 {% extends 'blog/main.html' %}
-
+{% block title %}Latest Posts{% endblock %}
 {% load static %}
 
 {% block content %}
 
-    {% for post in posts %}
+    <div class="container postContainer w-75 mb-5"> 
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="{% url 'post_add' %}" class="btn btn-secondary px-4 me-sm-3">Add a new post</a>
+        </div>
+    </div>
 
+    {% comment %} {% for post in posts %} {% endcomment %}
+
+    {% for post in object_list %}
+    
         <div class="container postContainer w-75"> 
+
             <div class="row g-0 mb-4">
                 <div class="col-md-3 mx-auto">
                     {% if post.image %}
@@ -17,8 +26,9 @@
                     <h4>{{ post.title }}</h4>
                     <p class="card-text lh-1"><small class="text-muted"><i>Published by {{ post.author }} on {{ post.published_date }}</i></small></p>
                     <p><i>{{ post.lead }}</i></p>
-                    {% comment %} <p class="card-text">{{ post.text }}</p> {% endcomment %}
-                    <a href="{% url 'post_text' post.pk %}" class="btn btn-success px-4 me-sm-3">Read more...</a>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{% url 'post_text' post.pk %}" class="btn btn-success px-4 me-sm-3">Read more...</a>
+                    </div>
                 </div>
             </div>
             <hr>

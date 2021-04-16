@@ -1,21 +1,23 @@
 {% extends 'blog/main.html' %}
-
+{% block title %}{{ post.title_tag }}{% endblock %}
 {% block content %}
 
     <div class="container w-75">
         <div class="row g-0 mb-4">
             <div class="col-md-3 mx-auto">
-                {% if postText.image %}
-                    <img src="{{ postText.image.url }}" alt="...">
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="...">
                 {% endif %}
             </div>
             <div class="col-md-9 mx-auto">
-                <h3>{{ postText.title }}</h3>
-                <p class="card-text lh-1"><small class="text-muted"><i>Published by {{ postText.author }} on {{ postText.published_date }}</i></small></p>
+                <h3>{{ post.title }}</h3>
+                <p class="card-text lh-1"><small class="text-muted"><i>Published by {{ post.author }} on {{ post.created_date }}</i></small></p>
                 <hr>
-                <p>{{ postText.lead }}</p>
-                <p>{{ postText.text }}</p>
-                <p><a href="{% url 'post_list' %}" class="btn btn-success px-4 me-sm-3">Back</a></p>
+                <p>{{ post.lead }}</p>
+                <p>{{ post.text|linebreaks }}</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <p><a href="{% url 'post_list' %}" class="btn btn-success px-4 me-sm-3">Back</a></p>
+                </div>
             </div>
         </div>
     </div>

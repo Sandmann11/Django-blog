@@ -1,0 +1,21 @@
+{% extends 'blog/main.html' %}
+{% block title %}Create a new blog post{% endblock %}
+
+{% block content %}
+
+    <div class="container w-75 my-5">
+
+        <h2>Add post...</h2>
+        <br>
+        <form method="POST">
+            
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button>Post</button>
+        </form>
+
+    </div>
+    
+{% endblock content %} 
