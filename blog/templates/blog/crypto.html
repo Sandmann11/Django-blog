@@ -6,20 +6,57 @@
 
     {% comment %} {% for coin in coins %} {% endcomment %}
 
-        <div class="container postContainer w-75"> 
-            <div class="row">
-                <div class="column md-3">
-                    <ul>
-                        <li><h5> {{ btc_symbol }} |  USD</h5></li>
-                        <li><h5> {{ eth_symbol }} | {{ eth_price }} USD</h5></li>
-                        <li><h5> {{ xmr_symbol }} | {{ xmr_price }} USD</h5></li>
-                    </ul>
-                </div>
-                <div class="column md-9">{{ btc_price }}
-                </div>
+        <div class="container postContainer"> 
 
+            <div class="row justify-content-evenly">
+                <div class="col-md-4 text-center">
+
+                    <div class="card text-center bg-light">
+                        <div class="card-header">
+                        Binance.com
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Bitcoin (BTC)</h4>
+                            <h1 class="card-text">{{ btc_price }}</h1><h5>USDT</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center bg-light">
+                        <div class="card-header">
+                        Binance.com
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Ethereum (ETH)</h4>
+                            <h1 class="card-text">{{ eth_price }}</h1><h5>USDT</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center bg-light">
+                        <div class="card-header">
+                        Binance.com
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Monero (XMR)</h4>
+                            <h1 class="card-text">{{ xmr_price }}</h1><h5>USDT</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
+                        </div>
+                    </div>
+                </div>            
             </div>
         </div>
+
+
 
 
         {% comment %} <div class="container postContainer w-75"> 

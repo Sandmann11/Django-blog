@@ -24,7 +24,7 @@ class Post(models.Model):
 class Crypto(models.Model):
     name = models.CharField(max_length=50)
     symbol = models.CharField(max_length=5)
-    price = models.FloatField(max_length=15)
+    # price = models.FloatField(max_length=15)
     date = models.DateTimeField(default=timezone.now)
 
     def date_added(self):
