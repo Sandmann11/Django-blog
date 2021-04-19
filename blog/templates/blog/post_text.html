@@ -11,7 +11,8 @@
             </div>
             <div class="col-md-9 mx-auto">
                 <h3>{{ post.title }}</h3>
-                <p class="card-text lh-1"><small class="text-muted"><i>Published by {{ post.author }} on {{ post.created_date }}</i></small></p>
+                <p class="card-text lh-1"><small class="text-muted"><i>Published by {{ post.author }} on {{ post.created_date }} | 
+                    <a href="{% url 'post_update' post.pk %}">Edit</a></i></small></p>
                 <hr>
                 <p>{{ post.lead }}</p>
                 <p>{{ post.text|linebreaks }}</p>

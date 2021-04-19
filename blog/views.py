@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post
-from django.views.generic import ListView, DetailView, CreateView
+from .forms import PostForm
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 import requests
+
 
 # Create your views here.
 def main(request):
@@ -21,17 +23,16 @@ class PostText(DetailView):
 
 class PostAdd(CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'blog/post_add.html'
-    fields = '__all__'
+    # fields = '__all__'
 
 
-# def post_list(request):
-#     posts = Post.objects.all()
-#     return render(request, 'blog/post_list.html', {'posts':posts})
-
-# def post_text(request, pk):
-#     postText = get_object_or_404(Post, pk=pk)
-#     return render(request, 'blog/post_text.html', {'postText':postText})
+class PostUpdate(UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'blog/post_update.html'
+    # fields = ['title', 'title_tag', 'lead', 'text']
 
 
 def portfolio(request):

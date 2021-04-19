@@ -1,7 +1,5 @@
 {% extends 'blog/main.html' %}
-
 {% block title %}Latest Posts{% endblock %}
-
 {% load static %}
 
 {% block content %}
@@ -16,30 +14,28 @@
     {% for post in object_list %}
     
         <div class="container postContainer w-75"> 
-
             <div class="row px-0 py-3">
                 <div class="card shadow-sm text-dark bg-light mx-auto px-0">
-                    <div class="card-header px-3"><em><small>Published by {{ post.author }} on {{ post.created_date }}</small></em></div>
-                    <div class="row gx-1 py-3">
-                        <div class="col col-md-3 text-center">
-                            {% if post.image %}
-                                <img src="{{ post.image.url }}" alt="...">
-                            {% endif %}
-                        </div>
-                        <div class="col col-md-9 ps-0 py-0">
-                            <div class="card-body ps-0 pe-3 mb-6 pt-0">                                
-                                <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.lead }}</p>
+                    <div class="card-header px-3"><em><small>Published by {{ post.author }} on {{ post.created_date }} | <a href="{% url 'post_update' post.pk %}">Edit</a></small></em></div>
+                        <div class="row gx-1 py-3">
+                            <div class="col col-md-3 text-center">
+                                {% if post.image %}
+                                    <img src="{{ post.image.url }}" alt="...">
+                                {% endif %}
                             </div>
-                            <div class="d-grid d-md-flex mt-5 mb-0 pe-3 justify-content-end">
-                                <a href="{% url 'post_text' post.pk %}" class="btn btn-success px-4 ms-2 me-0">Read more...</a>
-                            </div>
-                            
+                            <div class="col col-md-9 ps-0 py-0">
+                                <div class="card-body ps-0 pe-3 mb-6 pt-0">                                
+                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <p class="card-text">{{ post.lead }}</p>
+                                </div>
+                                <div class="d-grid d-md-flex mt-5 mb-0 pe-3 justify-content-end">
+                                    <a href="{% url 'post_text' post.pk %}" class="btn btn-success px-4 ms-2 me-0">Read more...</a>
+                                
+                            </div>                            
                         </div>
                     </div>
                 </div>
             </div>
-
             {% comment %} <div class="row mb-4 ps-0 pe-2 py-2">
 
                 <div class="col-3 mx-0 text-center">
@@ -60,7 +56,6 @@
                 </div>
 
             </div> {% endcomment %}
-
         </div>    
 
     {% endfor %}

@@ -8,7 +8,7 @@ from django.urls import reverse
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    title_tag = models.CharField(max_length=225, default = 'Generic Title')
+    title_tag = models.CharField(max_length=225)
     lead = models.TextField(max_length=500, null=True)
     text = models.TextField()
     image = models.ImageField(blank=True, null=True, upload_to='img', default='lus-200.jpg')
@@ -22,9 +22,9 @@ class Post(models.Model):
     def __str__(self):        
         return self.title + ' | ' + str(self.author)
 
-
     def get_absolute_url(self):
         return reverse('post_text', kwargs={'pk': self.pk})
+        # return reverse('post_list')
 
     
     
