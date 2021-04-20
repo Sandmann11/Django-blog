@@ -1,18 +1,20 @@
 {% extends 'blog/main.html' %}
-{% block title %}Create a New Post{% endblock %}
+{% block title %}Delete Post{% endblock %}
 
 {% block content %}
 
     {% if user.is_authenticated %}
-
-        <div class="container w-75 my-1">
-            <h2>Add Post...</h2>
+    
+        <div class="container w-75">
+            <h2>Delete Post...</h2>
             <br>
+            <h5>You are about to permanently delete {{ post.title }}.<br/> Are you sure?</h5>
+            <br>
+
             <div class="form-group w-75">
                 <form method="POST">                
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="btn btn-primary px-5">Post</button>                    
+                    <button class="btn btn-danger px-5">Yes, Delete It!</button>                    
                 </form>
             </div>        
         </div>
@@ -24,7 +26,7 @@
             <br>
             <a href="{% url 'login' %}">Login</a>                                
         </div>
-        
+
     {% endif %}
     
 {% endblock content %} 

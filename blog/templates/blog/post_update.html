@@ -3,18 +3,30 @@
 
 {% block content %}
 
-    <div class="container w-75 my-5">
-        <h2>Edit post...</h2>
-        <br>
-        <div class="form-group w-75">
-            <form method="POST">                
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button class="btn btn-primary px-5">Update</button>                    
-            </form>
+    {% if user.is_authenticated %}
+
+        <div class="container w-75 my-5">
+            <h2>Edit post...</h2>
+            <br>
+            <div class="form-group w-75">
+                <form method="POST">                
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-primary px-5">Update</button>                    
+                </form>
+            </div>        
         </div>
 
-        
-    </div>
-    
+    {% else %}
+
+        <div class="container w-75 my-5">
+            <h2>You are not logged in!</h2>
+            <br>
+
+            <a href="{% url 'login' %}">Login</a>
+                                
+        </div>
+
+    {% endif %}
+
 {% endblock content %} 

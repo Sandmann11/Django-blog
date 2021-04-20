@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post
 from .forms import PostForm
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 import requests
 
 
@@ -12,32 +13,8 @@ def main(request):
 def admin(request):
     return render(request, 'blog/admin.html', {})
 
-class PostList(ListView):
-    model = Post
-    template_name = 'blog/post_list.html'
-
-class PostText(DetailView):
-    model = Post
-    # context_object_name = 'post'
-    template_name = 'blog/post_text.html'
-
-class PostAdd(CreateView):
-    model = Post
-    form_class = PostForm
-    template_name = 'blog/post_add.html'
-    # fields = '__all__'
-
-
-class PostUpdate(UpdateView):
-    model = Post
-    form_class = PostForm
-    template_name = 'blog/post_update.html'
-    # fields = ['title', 'title_tag', 'lead', 'text']
-
-
 def portfolio(request):
     return render(request, 'blog/portfolio.html', {})
-
 
 def crypto(request):
     json_data = requests.get('https://api.binance.com/api/v3/ticker/price').json()
@@ -51,3 +28,31 @@ def crypto(request):
         'eth_price':eth_price,
         'xmr_price':xmr_price
         })
+
+
+class PostList(ListView):
+    model = Post
+    template_name = 'blog/post_list.html'
+    ordering = ['-created_date']
+
+class PostText(DetailView):
+    model = Post
+    # context_object_name = 'post'
+    template_name = 'blog/post_text.html'
+
+class PostAdd(CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'blog/post_add.html'
+    # fields = '__all__'
+
+class PostUpdate(UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'blog/post_update.html'
+    # fields = ['title', 'title_tag', 'lead', 'text']
+
+class PostDelete(DeleteView):
+    model = Post
+    template_name = 'blog/post_delete.html'
+    success_url = reverse_lazy('post_list')

@@ -23,12 +23,16 @@ class Post(models.Model):
         return self.title + ' | ' + str(self.author)
 
     def get_absolute_url(self):
-        return reverse('post_text', kwargs={'pk': self.pk})
-        # return reverse('post_list')
+        # return reverse('post_text', kwargs={'pk': self.pk})
+        return reverse('post_list')
+
+
+
+
+
 
     
     
-
 # class Crypto(models.Model):
 #     name = models.CharField(max_length=50)
 #     symbol = models.CharField(max_length=5)

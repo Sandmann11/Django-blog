@@ -5,21 +5,40 @@
         <div class="container navContainer2">        
             <ul class="navbar-nav">
                 <a class="navbar-brand px-3" href="{% url 'main' %}"><img src="{% static 'img/logo.png' %}"></a>
+
                 <li class="nav-item active">
                     <a class="nav-link" aria-current="page" href="{% url 'main' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+                    <a class="nav-link" href="{% url 'post_list' %}">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'crypto' %}">Crypto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin' %}">Admin</a>
+                    <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
                 </li>
+
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post_add' %}">Add Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>                
+                
+                {% else %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                
+                {% endif %}
+
+
             </ul>
         </div>
     </nav>

@@ -1,19 +1,25 @@
 body {
     background-color:#ffffff;
     height: 1200px;
+    font-family: 'Ubuntu';
 }
 
 nav {
-    background-color: #83cdff;
+    background-color: #5e3a58;
 }
 
 .nav-link {
-    color: #141414;
+    color: #ffffff;
+    font-family: 'Ubuntu';
 }
 
-/* .mainContainer {
-    background-color:floralwhite;
-} */
+.mainContainer {
+    background-color:rgb(247, 247, 247);
+}
+
+.card-header {
+    background-color:rgb(202, 228, 222);
+}
 
 /* .navbar-brand {
     color:black;

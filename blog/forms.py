@@ -12,6 +12,6 @@ class PostForm(forms.ModelForm):
             'title_tag': forms.TextInput(attrs={'class': 'form-control'}),
             'lead': forms.Textarea(attrs={'class': 'form-control'}),
             'text': forms.Textarea(attrs={'class': 'form-control'}),
-            # 'image': forms.ImageField(attrs={'class': 'form-control'}),
+            # 'image': forms.xxxxxxxxxx(attrs={'class': 'form-control'}),
             # 'created_date': forms.TextInput(attrs={'class': 'form-control'}),
         }
