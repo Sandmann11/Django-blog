@@ -9,7 +9,7 @@
             <h2>Add Post...</h2>
             <br>
             <div class="form-group w-75">
-                <form method="POST">                
+                <form method="POST" enctype="multipart/form-data">                
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button class="btn btn-primary px-5">Post</button>                    
