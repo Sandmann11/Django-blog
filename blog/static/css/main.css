@@ -8,6 +8,14 @@ nav {
     background-color: #5e3a58;
 }
 
+.navContainer {
+    background-color: #5e3a58;
+}
+
+/* .navbar {
+    margin: auto;
+} */
+
 .nav-link {
     color: #ffffff;
     font-family: 'Ubuntu';
@@ -21,36 +29,10 @@ nav {
     background-color:rgb(202, 228, 222);
 }
 
-/* .navbar-brand {
-    color:black;
-    font-weight: 500;
-} */
-
-/* .homeContainer {
-    text-align: justify;
-} */
-
-/* .album {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+.postContainer {
+    width: 95%;
 }
 
-#carouselExampleIndicators {
-    margin: auto;
-} */
-
-/* .navbar-nav {
-    margin: auto;
-} */
-
-/* .postContainer {
-    background-color:lightcoral;
-} */
-
-/* .navContainer {
-    margin: auto;
-} */
-
-/* .navbar-expand-lg {
-    margin: auto;
-} */
+.navContainer2 {
+    width: 75%;
+}

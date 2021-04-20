@@ -4,8 +4,8 @@
 
 {% block content %}
 
-    <div class="container postContainer w-75 mb-2 px-0"> 
-        <div class="d-grid gap-2 d-md-flex mx-0 px-0 justify-content-end">
+    <div class="container postContainer mb-2 px-0"> 
+        <div class="d-grid gap-2 d-md-flex mx-0 px-0 justify-content-start">
             {% if user.is_authenticated %}
                 <a href="{% url 'post_add' %}" class="btn btn-secondary px-3 mx-0 mb-2">Add a new post</a>            
             {% endif %}
@@ -15,8 +15,8 @@
 
     {% for post in object_list %}
     
-        <div class="container postContainer w-75"> 
-            <div class="row px-0 py-2">
+        <div class="container postContainer"> 
+            <div class="row px-0 py-3">
                 <div class="card shadow-sm text-dark bg-light mx-auto px-0">
                     <div class="card-header px-3">
                         <em><small>Published by {{ post.author }} on {{ post.created_date }}
@@ -26,10 +26,10 @@
                         {% endif %}
                         </small></em>
                     </div>
-                        <div class="row gx-1 py-3">
+                        <div class="row py-3">
                             <div class="col col-md-3 text-center">
                                 {% if post.image %}
-                                    <img src="{{ post.image.url }}" alt="...">
+                                    <img class="post-list-img" src="{{ post.image.url }}" alt="...">
                                 {% endif %}
                             </div>
                             <div class="col col-md-9 ps-0 py-0">
