@@ -4,25 +4,38 @@
 
     <div class="container-flex postContainer mx-auto">
         <div class="row g-0 mb-4">
-            <div class="col-md-2 text-center mx-auto">
+            <div class="col-md-2 text-center me-4">
                 {% if post.image %}
                     <img src="{{ post.image.url }}" alt="...">
                 {% endif %}
             </div>
             <div class="col-md-9">
-                <h3>{{ post.title }}</h3>
-                <p class="card-text lh-1"><small class="text-muted"><i>Published by {{ post.author }} on {{ post.created_date }}
+                {% comment %} <div class="row">
+                    <div class="col-8"><h2>{{ post.title }}</h2></div>
+                    <div class="col-4 text-end"><p>Category: {{ post.category }}</p></div>
+                </div> {% endcomment %}
+                <small>Category: {{ post.category }}</small>
+                <h2>{{ post.title }}</h2>
+                
+
+
+
+
+                <p class="card-text lh-1"><small class="text-muted"><em>Published by {{ post.author }} on {{ post.created_date }}
+
                 {% if user.is_authenticated %}
                     | <a href="{% url 'post_update' post.pk %}">Edit</a> | <a href="{% url 'post_delete' post.pk %}">Delete</a>
                 {% endif %}
+                    </em></small></p>
+                
 
-                    </i></small></p>
                 <hr>
                 <p>{{ post.lead }}</p>
                 <p>{{ post.text|linebreaks }}</p>
                 <div class="d-grid gap-2 d-md-flex mt-5 justify-content-md-start">
                     <p><a href="{% url 'post_list' %}" class="btn btn-success px-4 me-sm-3">Back</a></p>
                 </div>
+
             </div>
         </div>
     </div>

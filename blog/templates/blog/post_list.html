@@ -19,14 +19,14 @@
             <div class="row px-0 py-3">
                 <div class="card shadow-sm text-dark bg-light mx-auto px-0">
                     <div class="card-header px-3">
-                        <em><small>Published by {{ post.author }} on {{ post.created_date }}
+                        <em><small>Published by <strong>{{ post.author }}</strong> on <strong>{{ post.created_date }}</strong> in <strong>{{ post.category }}</strong>
                         {% if user.is_authenticated %}              
                             | <a href="{% url 'post_update' post.pk %}">Edit</a> | 
                             <a href="{% url 'post_delete' post.pk %}">Delete</a>
                         {% endif %}
                         </small></em>
                     </div>
-                        <div class="row py-3">
+                        <div class="row px-3 pt-4 pb-3">
                             <div class="col col-md-3 text-center">
                                 {% if post.image %}
                                     <img class="post-list-img" src="{{ post.image.url }}" alt="...">
@@ -34,7 +34,7 @@
                             </div>
                             <div class="col col-md-9 ps-0 py-0">
                                 <div class="card-body ps-0 pe-3 mb-6 pt-0">                                
-                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <h4 class="card-title">{{ post.title }}</h4>
                                     <p class="card-text">{{ post.lead }}</p>
                                 </div>
                                 <div class="d-grid d-md-flex mt-5 mb-0 pe-3 justify-content-end">
