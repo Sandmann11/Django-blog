@@ -10,7 +10,6 @@
         <div class="container container-fluid postContainer px-0"> 
             <div class="row justify-content-between">
                 <div class="col-md-4 text-center">
-
                     <div class="card shadow-sm text-center bg-light">
                         <div class="card-header">
                             <small><em>Source: Binance.com</em></small>
@@ -52,6 +51,33 @@
                         </div>
                     </div>
                 </div>            
+            </div>
+
+
+            <div class="row mt-5 pt-3 text-center">
+                <h5>Check prices of all available crypto pairs below:</h5>
+                <br>
+
+                <table class="table table-hover crypto_rates_all w-75 mt-2 mx-auto">
+                    <thead>
+                        <tr class="table-success">
+                            <th>Symbol</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in coin_list %}
+                            <tr>
+                                <td>{{item.symbol}}</td>
+                                <td>{{item.price}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+
+                {% comment %} {{ df_html }} {% endcomment %}
+
             </div>
         </div>
 

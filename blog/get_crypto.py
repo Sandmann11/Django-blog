@@ -1,20 +1,10 @@
 import requests
 import time
+import pandas as pd
 
-r = requests.get('https://api.binance.com/api/v3/ticker/price')
 
-# base_url = 'https://api.binance.com/api/v3/'
-# btc_ticker = 'avgPrice?symbol=BTCUSDT'
-# eth_ticker = 'avgPrice?symbol=ETHUSDT'
-# xmr_ticker = 'avgPrice?symbol=XMRUSDT'
+json_data = requests.get('https://api.binance.com/api/v3/ticker/price').json()
 
-json_data = r.json()
+df = pd.DataFrame(json_data)
 
-# def btc_rate():
-#     btc_price = json_data['price']
-#     return round(float(btc_price), 2)
-
-# print(f'Status Code: {r.status_code}')
-# print(btc_rate())
-
-# print(json_data)
+print(df.info())
