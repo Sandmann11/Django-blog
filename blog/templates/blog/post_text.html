@@ -3,22 +3,16 @@
 {% block content %}
 
     <div class="container-flex postContainer mx-auto">
-        <div class="row g-0 mb-4">
-            <div class="col-md-2 text-center me-4">
+        <div class="row g-2 mb-4 justify-content-evenly">
+            <div class="col-sm-3 text-center">
                 {% if post.image %}
                     <img src="{{ post.image.url }}" alt="...">
                 {% endif %}
             </div>
-            <div class="col-md-9">
-                {% comment %} <div class="row">
-                    <div class="col-8"><h2>{{ post.title }}</h2></div>
-                    <div class="col-4 text-end"><p>Category: {{ post.category }}</p></div>
-                </div> {% endcomment %}
+
+            <div class="col-sm-9">
                 <small>Category: {{ post.category }}</small>
-                <h2>{{ post.title }}</h2>
-                
-
-
+                <h2>{{ post.title }}</h2>    
 
 
                 <p class="card-text lh-1"><small class="text-muted"><em>Published by {{ post.author }} on {{ post.created_date }}
