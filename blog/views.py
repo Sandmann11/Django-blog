@@ -7,8 +7,6 @@ import requests
 import pandas as pd
 
 
-
-# Create your views here.
 def main(request):
     return render(request, 'blog/main.html', {})    
 
@@ -21,11 +19,36 @@ def portfolio(request):
 def crypto(request):
     json_data = requests.get('https://api.binance.com/api/v3/ticker/price').json()
 
-    coin_list = []
-    for coin in json_data:
-        coin_list.append(coin)
+    btc_list = []
+    eth_list = []
+    bnb_list = []
+    eur_list = []
+    usdt_list = []
 
-    df = pd.DataFrame(coin_list)
+    for coin in json_data:
+        if coin['symbol'].endswith('BTC'):
+            coin['symbol'] = coin['symbol'][slice(3)]
+            btc_list.append(coin)
+
+        elif coin['symbol'].endswith('ETH'):
+            coin['symbol'] = coin['symbol'][slice(3)]
+            eth_list.append(coin)
+
+        elif coin['symbol'].endswith('BNB'):
+            coin['symbol'] = coin['symbol'][slice(3)]
+            bnb_list.append(coin)
+
+        elif coin['symbol'].endswith('EUR'):
+            coin['symbol'] = coin['symbol'][slice(3)]
+            coin['price'] = round(float(coin['price']), 2)
+            eur_list.append(coin)
+
+        elif coin['symbol'].endswith('USDT'):
+            coin['symbol'] = coin['symbol'][slice(-4)]
+            coin['price'] = round(float(coin['price']), 2)
+            usdt_list.append(coin)
+
+    df = pd.DataFrame(json_data)
 
     btc_price = round(float(json_data[11]['price']), 2)
     eth_price  = round(float(json_data[12]['price']), 2)
@@ -35,8 +58,12 @@ def crypto(request):
         'btc_price':btc_price,
         'eth_price':eth_price,
         'xmr_price':xmr_price,
-        'coin_list':coin_list,
-        'df':df
+        'btc_list':btc_list,
+        'eth_list':eth_list,
+        'bnb_list':bnb_list,
+        'eur_list':eur_list,
+        'usdt_list':usdt_list,
+        # 'df':df
         })
 
 
