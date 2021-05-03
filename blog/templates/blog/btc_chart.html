@@ -1,0 +1,16 @@
+{% extends 'blog/main.html' %}
+{% block title %}BTC Price Chart{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="container">
+        
+        {% if graph %}
+            {{ graph|safe }}
+        {% else %}
+            <p>No graph was provided.</p>
+        {% endif %}
+
+    </div>

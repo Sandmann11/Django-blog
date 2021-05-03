@@ -18,6 +18,21 @@ def portfolio(request):
 
 def crypto(request):
     json_data = requests.get('https://api.binance.com/api/v3/ticker/price').json()
+    # df = pd.DataFrame(json_data)
+
+    btc_price = round(float(json_data[11]['price']), 2)
+    eth_price  = round(float(json_data[12]['price']), 2)
+    xmr_price = round(float(json_data[480]['price']), 2)
+
+    return render(request, 'blog/crypto.html', {
+        'btc_price':btc_price,
+        'eth_price':eth_price,
+        'xmr_price':xmr_price,
+        # 'df':df
+        })
+
+def crypto_all(request):
+    json_data = requests.get('https://api.binance.com/api/v3/ticker/price').json()
 
     btc_list = []
     eth_list = []
@@ -48,22 +63,12 @@ def crypto(request):
             coin['price'] = round(float(coin['price']), 2)
             usdt_list.append(coin)
 
-    df = pd.DataFrame(json_data)
-
-    btc_price = round(float(json_data[11]['price']), 2)
-    eth_price  = round(float(json_data[12]['price']), 2)
-    xmr_price = round(float(json_data[480]['price']), 2)
-
-    return render(request, 'blog/crypto.html', {
-        'btc_price':btc_price,
-        'eth_price':eth_price,
-        'xmr_price':xmr_price,
+    return render(request, 'blog/crypto_all.html', {
         'btc_list':btc_list,
         'eth_list':eth_list,
         'bnb_list':bnb_list,
         'eur_list':eur_list,
         'usdt_list':usdt_list,
-        # 'df':df
         })
 
 

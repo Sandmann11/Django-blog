@@ -12,13 +12,23 @@ nav {
     background-color: #5e3a58;
 }
 
-/* .navbar {
-    margin: auto;
-} */
+.dropdown-menu {
+    background-color: #5e3a58;
+    border-style: none;
+}   
+
+.dropdown-item {
+    color: #ffffff;
+    font-family: 'Ubuntu';
+}
 
 .nav-link {
     color: #ffffff;
     font-family: 'Ubuntu';
+}
+
+.nav-link:hover {
+    color:darkseagreen;
 }
 
 .mainContainer {

@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('portfolio/', views.portfolio, name='portfolio'),
     path('crypto/', views.crypto, name='crypto'),
+    path('crypto_all/', views.crypto_all, name='crypto_all'),
 
     path('post_list/', PostList.as_view(), name='post_list'),
     path('post_text/<int:pk>/', PostText.as_view(), name='post_text'),

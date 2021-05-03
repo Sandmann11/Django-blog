@@ -12,13 +12,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'post_list' %}">Blog</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'crypto' %}">Crypto</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Crypto
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'crypto' %}">My Coins</a></li>
+                        <li><a class="dropdown-item" href="{% url 'crypto_all' %}">All Crypto Markets</a></li>
+                    </ul>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
                 </li>
             </ul>
+
             <div class="navbar-nav justify-content-end">
                 {% if user.is_authenticated %}
                     <ul class="navbar-nav">

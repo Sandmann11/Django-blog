@@ -1,0 +1,92 @@
+{% extends 'blog/main.html' %}
+{% block title %}All Crypto Markets{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="row mt-5 pt-3 text-center">
+        <h5>Check the prices of all available crypto pairs below:</h5>
+        <br>
+
+        <div class="col-md-6">
+            <table class="table table-striped table-bordered table-hover crypto_rates_all w-75 mt-4 mx-auto">
+                <thead>
+                    <tr class="table-success">
+                        <th>Symbol</th>
+                        <th>Price / BTC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for coin in btc_list %}
+                        <tr>
+                            <td>{{coin.symbol}}</td>
+                            <td>{{coin.price}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-6">
+            <table class="table table-striped table-bordered table-hover crypto_rates_all w-75 mt-4 mx-auto">
+                <thead>
+                    <tr class="table-success">
+                        <th>Symbol</th>
+                        <th>Price / ETH</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for coin in eth_list %}
+                        <tr>
+                            <td>{{coin.symbol}}</td>
+                            <td>{{coin.price}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>  
+        </div>                
+
+    </div>
+
+    <div class="row mt-5 pt-3 text-center">
+
+        <div class="col-md-6">
+            <table class="table table-striped table-bordered table-hover crypto_rates_all w-75 mt-2 mx-auto">
+                <thead>
+                    <tr class="table-success">
+                        <th>Symbol</th>
+                        <th>Price / USDT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for coin in usdt_list %}
+                        <tr>
+                            <td>{{coin.symbol}}</td>
+                            <td>{{coin.price}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-6">
+            <table class="table table-striped table-bordered table-hover crypto_rates_all w-75 mt-2 mx-auto">
+                <thead>
+                    <tr class="table-success">
+                        <th>Symbol</th>
+                        <th>Price / EUR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for eur in eur_list %}
+                        <tr>
+                            <td>{{eur.symbol}}</td>
+                            <td>{{eur.price}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>  
+        </div>                
+
+    </div>
+{% endblock content %}

@@ -7,169 +7,51 @@
 
         {% comment %} {% for coin in coins %} {% endcomment %}
 
-        <div class="container container-fluid postContainer px-0"> 
-            <div class="row justify-content-between">
-                <div class="col-md-4 text-center">
-                    <div class="card shadow-sm text-center bg-light">
-                        <div class="card-header">
-                            <small><em>Source: Binance.com</em></small>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Bitcoin (BTC)</h5>
-                            <h1 class="card-text">{{ btc_price }}</h1><h5>USDT</h5>
-                        </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
-                        </div>
+    <div class="container container-fluid postContainer px-0"> 
+        <div class="row justify-content-between">
+            <div class="col-md-4 text-center">
+                <div class="card shadow-sm text-center bg-light">
+                    <div class="card-header">
+                        <small><em>Source: Binance.com</em></small>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Bitcoin (BTC)</h5>
+                        <h1 class="card-text">{{ btc_price }}</h1><h5>USDT</h5>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card shadow-sm text-center bg-light">
-                        <div class="card-header">
-                            <small><em>Source: Binance.com</em></small>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Ethereum (ETH)</h5>
-                            <h1 class="card-text">{{ eth_price }}</h1><h5>USDT</h5>
-                        </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center bg-light">
+                    <div class="card-header">
+                        <small><em>Source: Binance.com</em></small>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ethereum (ETH)</h5>
+                        <h1 class="card-text">{{ eth_price }}</h1><h5>USDT</h5>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card shadow-sm text-center bg-light">
-                        <div class="card-header">
-                            <small><em>Source: Binance.com</em></small>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Monero (XMR)</h5>
-                            <h1 class="card-text">{{ xmr_price }}</h1><h5>USDT</h5>
-                        </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center bg-light">
+                    <div class="card-header">
+                        <small><em>Source: Binance.com</em></small>
                     </div>
-                </div>            
-            </div>
-
-
-            <div class="row mt-5 pt-3 text-center">
-                <h5>Check the prices of all available crypto pairs below:</h5>
-                <br>
-
-                <div class="col-md-6">
-                    <table class="table table-striped table-bordered table-hover crypto_rates_all w-75 mt-4 mx-auto">
-                        <thead>
-                            <tr class="table-success">
-                                <th>Symbol</th>
-                                <th>Price / BTC</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for coin in btc_list %}
-                                <tr>
-                                    <td>{{coin.symbol}}</td>
-                                    <td>{{coin.price}}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="card-body">
+                        <h5 class="card-title">Monero (XMR)</h5>
+                        <h1 class="card-text">{{ xmr_price }}</h1><h5>USDT</h5>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
+                    </div>
                 </div>
-
-                <div class="col-md-6">
-                    <table class="table table-striped table-bordered table-hover crypto_rates_all w-75 mt-4 mx-auto">
-                        <thead>
-                            <tr class="table-success">
-                                <th>Symbol</th>
-                                <th>Price / ETH</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for coin in eth_list %}
-                                <tr>
-                                    <td>{{coin.symbol}}</td>
-                                    <td>{{coin.price}}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>  
-                </div>                
-
-            </div>
-
-            <div class="row mt-5 pt-3 text-center">
-
-                <div class="col-md-6">
-                    <table class="table table-striped table-bordered table-hover crypto_rates_all w-75 mt-2 mx-auto">
-                        <thead>
-                            <tr class="table-success">
-                                <th>Symbol</th>
-                                <th>Price / USDT</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for coin in usdt_list %}
-                                <tr>
-                                    <td>{{coin.symbol}}</td>
-                                    <td>{{coin.price}}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="col-md-6">
-                    <table class="table table-striped table-bordered table-hover crypto_rates_all w-75 mt-2 mx-auto">
-                        <thead>
-                            <tr class="table-success">
-                                <th>Symbol</th>
-                                <th>Price / EUR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for eur in eur_list %}
-                                <tr>
-                                    <td>{{eur.symbol}}</td>
-                                    <td>{{eur.price}}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>  
-                </div>                
-
-            </div>
-
-            {% comment %} <div class="row mt-5 pt-3 text-center">
-
-                <table class="table table-hover crypto_rates_all w-75 mt-2 mx-auto">
-                    <thead>
-                        <tr class="table-success">
-                            <th>Symbol</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for eth in eth_list %}
-                            <tr>
-                                <td>{{eth.symbol}}</td>
-                                <td>{{eth.price}}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>             
-
-            </div> {% endcomment %}
-
+            </div>            
         </div>
-
-
-        {% comment %} <div class="container postContainer w-75"> 
-            <ul>
-                <li><h5>{{coin.symbol}} | {{coin.name}} | {{coin.real_price}} USD</h5></li>
-            </ul>
-        </div>   {% endcomment %}
-
-    {% comment %} {% endfor %} {% endcomment %}
+    </div>
 
 {% endblock content %}
