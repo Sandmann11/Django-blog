@@ -6,11 +6,17 @@
 {% block content %}
 
     <div class="container">
+
+        <div class="container-fluid">
         
-        {% if graph %}
-            {{ graph|safe }}
-        {% else %}
-            <p>No graph was provided.</p>
-        {% endif %}
+            {% if chart %}
+                {{ chart|safe }}
+            {% else %}
+                <p>No graph was provided.</p>
+            {% endif %}
+
+        </div>
 
     </div>
+
+{% endblock content%}

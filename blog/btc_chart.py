@@ -10,8 +10,16 @@ url = 'https://api.binance.com/api/v3/klines?symbol='+market+'&interval='+tick_i
 data = requests.get(url).json()
 
 df = pd.DataFrame(data)
-df.columns = ['open_time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore']
-df.index = [dt.datetime.fromtimestamp(i / 1000.0) for i in df.close_time]
+df = df.drop(columns=[7, 8, 9, 10, 11])
+df.columns = ['open_time', 'open', 'high', 'low', 'close', 'volume', 'close_time']
+
+df['open_time'] = [dt.datetime.fromtimestamp(i / 1000.0) for i in df['open_time']]
+df['close_time'] = [dt.datetime.fromtimestamp(i / 1000.0) for i in df['close_time']]
+
+# df.index = [dt.datetime.fromtimestamp(i / 1000.0) for i in df['close_time']]
+df.index = df['close_time']
+df.index.name = 'date'
+
 
 fig = go.Figure(data=[go.Candlestick(
                 x=df.index, 
@@ -26,6 +34,6 @@ fig.update_layout(
 
 chart = fig.to_html(full_html=False, default_height=500, default_width=700)
 
-fig.show()
+# fig.show()
 
-# print(df.head())
+print(type(chart))

@@ -40,9 +40,7 @@
                 </em></small></p>
 
                 <p>{{ post.lead }}</p>
-                {% if post.image %}
-                    <img src="{{ post.image.url }}" class="col-md-3 float-md-end mb-1 mt-2 ms-md-3" alt="...">
-                {% endif %}
+
                 <p>{{ post.text|linebreaks }}</p>
 
                 <div class="d-grid gap-2 d-md-flex mt-4 justify-content-md-end">
