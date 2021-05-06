@@ -25,12 +25,6 @@ class Post(models.Model):
     image = models.ImageField(blank=True, null=True, upload_to='img', default='lus-200.jpg')
     created_date = models.DateTimeField(default=timezone.now)
 
-    # published_date = models.DateTimeField(blank=True, null=True)
-
-    # def publish(self):
-    #     self.published_date = timezone.now()
-    #     self.save()
-
     def __str__(self):        
         return self.title + ' | ' + str(self.author)
 
@@ -38,19 +32,3 @@ class Post(models.Model):
         # return reverse('post_text', kwargs={'pk': self.pk})
         return reverse('post_list')
 
-
-
-    
-    
-# class Crypto(models.Model):
-#     name = models.CharField(max_length=50)
-#     symbol = models.CharField(max_length=5)
-#     # price = models.FloatField(max_length=15)
-#     date = models.DateTimeField(default=timezone.now)
-
-#     def date_added(self):
-#         self.date = timezone.now()
-#         self.save()
-
-#     def __str__(self):        
-#         return self.symbol + ' |  ' + str(self.name)

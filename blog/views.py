@@ -12,11 +12,14 @@ import plotly.graph_objects as go
 def main(request):
     return render(request, 'blog/main.html', {})    
 
+
 def admin(request):
     return render(request, 'blog/admin.html', {})
 
+
 def portfolio(request):
     return render(request, 'blog/portfolio.html', {})
+
 
 def crypto(request):
     json_data = requests.get('https://api.binance.com/api/v3/ticker/price').json()
@@ -32,6 +35,7 @@ def crypto(request):
         'xmr_price':xmr_price,
         # 'df':df
         })
+
 
 def crypto_all(request):
     json_data = requests.get('https://api.binance.com/api/v3/ticker/price').json()
@@ -74,8 +78,7 @@ def crypto_all(request):
         })
 
 
-def btc_hist(request):
-
+def btc_chart(request):
     market = 'BTCUSDT'
     tick_interval = '1d'
 
@@ -100,7 +103,7 @@ def btc_hist(request):
                     close=df.close)])
 
     fig.update_layout(
-        title='BTC/USD Price Chart'
+        title='BTC Historic Price Chart'
     )
 
     chart = fig.to_html(full_html=False, default_height=800, default_width='100%')
@@ -113,10 +116,12 @@ class PostList(ListView):
     template_name = 'blog/post_list.html'
     ordering = ['-created_date']
 
+
 class PostText(DetailView):
     model = Post
     # context_object_name = 'post'
     template_name = 'blog/post_text.html'
+
 
 class PostAdd(CreateView):
     model = Post
@@ -124,16 +129,19 @@ class PostAdd(CreateView):
     template_name = 'blog/post_add.html'
     # fields = '__all__'
 
+
 class PostUpdate(UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'blog/post_update.html'
     # fields = ['title', 'title_tag', 'lead', 'text']
 
+
 class PostDelete(DeleteView):
     model = Post
     template_name = 'blog/post_delete.html'
     success_url = reverse_lazy('post_list')
+
 
 class CategoryAdd(CreateView):
     model = Category

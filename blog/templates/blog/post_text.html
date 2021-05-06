@@ -4,27 +4,8 @@
 
     <div class="container-flex postContainer mx-auto">
         <div class="row g-2 mb-4 justify-content-evenly">
-
-            {% comment %} <div class="col-sm-3 text-center">
-                {% if post.image %}
-                    <img src="{{ post.image.url }}" class="img-fluid" alt="...">
-                {% endif %}
-            </div> {% endcomment %}
-
-            {% comment %} <div class="col-sm-9">
-                <small>Category: {{ post.category }}</small>
-                <h2>{{ post.title }}</h2>    
-                <p class="card-text lh-1"><small class="text-muted"><em>Published by {{ post.author }} on {{ post.created_date }}
-
-                {% if user.is_authenticated %}
-                    | <a href="{% url 'post_update' post.pk %}">Edit</a> | <a href="{% url 'post_delete' post.pk %}">Delete</a>
-                {% endif %}
-                    
-                    </em></small></p>
-                
-                <hr>
-            </div> {% endcomment %}
             <div class="col">
+
                 {% if post.image %}
                     <img src="{{ post.image.url }}" class="col-md-3 float-md-start mb-1 mt-2 me-md-3" alt="...">
                 {% endif %}
@@ -36,18 +17,18 @@
                 {% if user.is_authenticated %}
                     | <a href="{% url 'post_update' post.pk %}">Edit</a> | <a href="{% url 'post_delete' post.pk %}">Delete</a>
                 {% endif %}
+
                 <hr>
                 </em></small></p>
 
                 <p>{{ post.lead }}</p>
-
                 <p>{{ post.text|linebreaks }}</p>
 
                 <div class="d-grid gap-2 d-md-flex mt-4 justify-content-md-end">
                     <p><a href="{% url 'post_list' %}" class="btn btn-success px-4 me-sm-3">Back</a></p>
                 </div>
+            
             </div>
-
         </div>
     </div>
     
