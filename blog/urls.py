@@ -11,6 +11,7 @@ urlpatterns = [
     path('crypto/', views.crypto, name='crypto'),
     path('crypto_all/', views.crypto_all, name='crypto_all'),
     path('btc_chart/', views.btc_chart, name='btc_chart'),
+    path('crypto_trades/', views.crypto_trades, name='crypto_trades'),
 
     path('post_list/', PostList.as_view(), name='post_list'),
     path('post_text/<int:pk>/', PostText.as_view(), name='post_text'),

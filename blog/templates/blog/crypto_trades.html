@@ -1,0 +1,41 @@
+{% extends 'blog/main.html' %}
+{% block title %}Crypto Trades{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="row mt-3 pt-3 text-center">
+        <h5>Crypto Trades</h5>
+        <br>
+
+        <table class="table table-striped table-bordered table-hover w-75 mt-3 mx-auto">
+            <thead>
+                <tr class="table-success">
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Commission</th>
+                    <th>Commission Currency</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in trades_df %}
+                    <tr>
+                        <td>{{trade.symbol}}</td>
+                        <td>{{trade.price}}</td>
+                        <td>{{trade.price}}</td>
+                        <td>{{trade.price}}</td>
+                        <td>{{trade.price}}</td>
+                        <td>{{trade.price}}</td>
+                        <td>{{trade.price}}</td>                       
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+
+{% endblock content %}

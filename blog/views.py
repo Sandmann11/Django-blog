@@ -7,6 +7,8 @@ import requests
 import pandas as pd
 import datetime as dt
 import plotly.graph_objects as go
+from binance.client import Client
+import bin_api
 
 
 def main(request):
@@ -34,6 +36,14 @@ def crypto(request):
         'eth_price':eth_price,
         'xmr_price':xmr_price,
         # 'df':df
+        })
+
+
+def crypto_trades(request):
+    trades_df = bin_api.latest_trades()
+
+    return render(request, 'blog/crypto_trades.html', {
+        'trades_df':trades_df
         })
 
 
@@ -108,7 +118,9 @@ def btc_chart(request):
 
     chart = fig.to_html(full_html=False, default_height=800, default_width='100%')
 
-    return render(request, 'blog/btc_chart.html', {'chart':chart})
+    return render(request, 'blog/btc_chart.html', {
+        'chart':chart
+        })
 
 
 class PostList(ListView):
