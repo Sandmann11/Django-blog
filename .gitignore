@@ -8,3 +8,4 @@ db.sqlite3
 *.sqlite3
 bin_api.py
 scratch.py
+datadump.json
