@@ -13,7 +13,7 @@ SECRET_KEY = 'vj#cpg9$8@q7o+-qs_+_$ekbwo3*m*cuviy1_w#^6-t!%f66l='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,8 +74,8 @@ DATABASES = {
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'mysite',
 #         'USER': 'postgres',
 #         'PASSWORD': 'admin',
 #         'HOST': 'localhost',
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-gb'
 
 TIME_ZONE = 'Europe/Warsaw'
 

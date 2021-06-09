@@ -22,3 +22,13 @@ class PostForm(forms.ModelForm):
             'image': forms.FileInput(attrs={'class': 'form-control'}),
             # 'created_date': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = ['name']
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+        }

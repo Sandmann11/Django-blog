@@ -21,7 +21,7 @@ class Post(models.Model):
     title_tag = models.CharField(max_length=225)
     lead = models.TextField(max_length=500, null=True)
     text = models.TextField()
-    category = models.CharField(max_length=255, default='Uncategorized')
+    category = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(blank=True, null=True, upload_to='img', default='lus-200.jpg')
     created_date = models.DateTimeField(default=timezone.now)
 
